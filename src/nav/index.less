@@ -1,0 +1,170 @@
+.yui-nav, .yui-nav-dark{
+  font-size:13px;
+  width:100%;
+  background: #1e1e1e;
+  color:#aaa;
+  user-select: none;
+  .yui-nav-compont{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    height:50px;
+    position: relative;
+    .yui-nav-logo{
+      position: absolute;
+      color:#fff;
+      div{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding:10px;
+        i{
+          font-size:20px;
+          padding:3px;
+        }
+      }
+    }
+    .yui-nav-compont-item , .yui-nav-compont-item-active{
+      background: #1e1e1e;
+      height:40px;
+      width:80px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-bottom:4px solid #1e1e1e;
+      margin-left:0;
+      padding-left:0;
+      .iconfont{
+        font-size:12px;
+        padding-right:6px;
+      }
+    }
+    .yui-nav-compont-item-active{
+      border-bottom:4px solid var(--theme-color);
+      color:#fff;
+    }
+    .yui-nav-compont-item:hover{
+      border-bottom:4px solid var(--theme-color);
+      color:#fff;
+    }
+  }
+  .yui-nav-compont-menu{
+    align-items: center;
+    width:100%;
+    height:100%;
+    font-size:13px;
+    overflow: auto;
+    .yui-nav-compont-menu-item,
+    .yui-nav-compont-menu-item2,
+    .yui-nav-compont-menu-item2-active,
+    .yui-nav-compont-menu-item-active,
+    .yui-nav-compont-menu-item-subMeun-active,
+    .yui-nav-compont-menu-item-subMeun{
+      cursor: pointer;
+      background: #1e1e1e;
+      height:40px;
+      width:100%;
+      padding-left:10px;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      border-left:4px solid #1e1e1e;
+      -moz-box-sizing: border-box; /*Firefox3.5+*/
+      -webkit-box-sizing: border-box; /*Safari3.2+*/
+      -o-box-sizing: border-box; /*Opera9.6*/
+      -ms-box-sizing: border-box; /*IE8*/
+      box-sizing: border-box; 
+      span{
+        min-width: 80px;
+      }
+      .iconfont{
+        font-size:16px;
+        padding-right:6px;
+      }
+    }
+    .yui-nav-compont-menu-item:hover{
+      border-left:4px solid var(--theme-color);
+      color: var(--theme-color) !important;
+      transition: all .8s;
+      -webkit-transition: all .8s;
+    }
+    .yui-nav-compont-menu-item-active{
+      border-left:4px solid #1e1e1e;
+      color: var(--theme-color) !important;
+    }
+    .yui-nav-compont-menu-item-active:hover{
+      border-left:4px solid var(--theme-color);
+      color:#fff;
+      transition: all .8s;
+      -webkit-transition: all .8s;
+    }
+    .yui-nav-compont-menu-item2:hover{
+      color: var(--theme-color) !important;
+      border-left:4px solid var(--theme-color);
+      transition: all .8s;
+      -webkit-transition: all .8s;
+    }
+    .yui-nav-compont-menu-item2-active{
+      border-left:4px solid var(--theme-color);
+      color: var(--theme-color) !important;
+    }
+    .yui-nav-compont-menu-item-subMeun{
+      padding-left:30px;
+    }
+    .yui-nav-compont-menu-item-subMeun-active{
+      border-left:4px solid var(--theme-color);
+      padding-left:30px;
+      color: var(--theme-color) !important;
+    }
+    .yui-nav-compont-menu-item-subMeun:hover{
+     color: var(--theme-color) !important;
+      border-left:4px solid var(--theme-color);
+      transition: all .8s;
+      -webkit-transition: all .8s;
+    }
+    .yui-nav-compont-menu-item-label,.yui-nav-compont-menu-item-label-active{
+      font-size:13px;
+    }
+  }
+  .yui-nav-compont-menu::-webkit-scrollbar{/*滚动条整体样式*/
+    width: 0;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 0;
+  }
+}
+.yui-nav{
+  background: #f7f5f5;
+  color: rgba(0, 0, 0, 0.65);
+  .yui-nav-compont-item{
+    background: inherit !important;
+    border-color: #f7f5f5 !important;
+  }
+  .yui-nav-compont-item:hover{
+    color:rgba(0, 0, 0, 0.35) !important;
+    transition: all .8s;
+    -webkit-transition: all .8s;
+  }
+  .yui-nav-compont-item-active{
+    background: inherit !important;
+    color: var(--theme-color) !important;
+  }
+  .yui-nav-compont-menu-item,
+  .yui-nav-compont-menu-item2,
+  .yui-nav-compont-menu-item-subMeun,
+  .yui-nav-compont-menu-item-active{
+    background: #f7f5f5 !important;
+    border-color: #f7f5f5 !important;
+  }
+  .yui-nav-compont-menu-item2-active,
+  .yui-nav-compont-menu-item-subMeun-active{
+    background: #f7f5f5 !important;
+    color: var(--theme-color) !important;
+  }
+  .yui-nav-compont-menu-item:hover,
+  .yui-nav-compont-menu-item2:hover,
+  .yui-nav-compont-menu-item-subMeun:hover{
+    border-color: var(--theme-color) !important;
+    color: var(--theme-color) !important;
+  }
+}

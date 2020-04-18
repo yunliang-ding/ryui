@@ -1,0 +1,21 @@
+{
+  "name": "ryui-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "author": "yunliang-ding",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-istanbul": "^2.0.1",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.24.1",
+    "react":"16.12.0",
+    "react-dom":"16.12.0"
+  }
+}

@@ -1,0 +1,63 @@
+.yui-progress, .yui-progress-dark{
+  height: 8px;
+  width:100%;
+  border-radius: 10px;
+  background: #222;
+  .yui-progress-track{
+    height: 100%;
+    border-radius: 10px;
+  }
+}
+.yui-progress{
+  background: #dcdcdc;
+}
+.yui-progress-circle, .yui-progress-circle-dark{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: #333;
+  border-radius: 50%;
+  display: inline-block;
+  .pie_left,.pie_right {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .left,.right {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+    background: var(--theme-color);
+    width: 100%;
+    height: 100%;
+    transform: rotate(-180deg);
+  }
+  .pie_left,.left {
+    clip: rect(auto, 25px, auto, auto);
+  }
+  .pie_right,.right {
+    clip: rect(0, auto, auto, 25px);
+  }
+  .mask {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.934);
+    position: absolute;
+  }
+}
+.yui-progress-circle{
+  background: #dcdcdc;
+  .mask {
+    background: #fff;
+    color:#333;
+  }
+}

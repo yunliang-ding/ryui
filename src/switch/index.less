@@ -1,0 +1,59 @@
+.yui-switch,
+.yui-switch-dark,
+.yui-switch-checked,
+.yui-switch-checked-dark{
+  width: 42px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  .yui-switch-addon,.yui-switch-addon-checked{
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    border-radius: 100%;
+    transition: .6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .yui-switch-addon-checked{
+    right:1px;
+    left:auto;
+    transition: .6s;
+  }
+  .yui-switch-addon-checked-text, .yui-switch-addon-text{
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    right:auto;
+    transform: scale(0.92);
+    user-select: none;
+  }
+  .yui-switch-addon-text{
+    right:4px;
+    left:auto;
+  }
+  @keyframes spin{
+		0%{-webkit-transform:rotate(0deg);}
+		25%{-webkit-transform:rotate(90deg);}
+		50%{-webkit-transform:rotate(180deg);}
+		75%{-webkit-transform:rotate(270deg);}
+		100%{-webkit-transform:rotate(360deg);}
+	}
+}
+.yui-switch-checked{
+  background: var(--theme-color) !important;
+}
+.yui-switch-dark{
+  background: #444 !important;
+}
+.yui-switch-checked-dark{
+  background: #111 !important;
+}

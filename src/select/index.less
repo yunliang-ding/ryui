@@ -1,0 +1,219 @@
+.yui-select, .yui-select-dark{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width:100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f2f2f2;
+  background-color: #fff;
+  height:fit-content;
+  &:hover{
+    border-color:var(--theme-color) !important;
+  }
+  .yui-select-compont-value{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .yui-select-allow{
+    width: 10%;
+    min-width: 20px;
+    position: absolute;
+    right: 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .yui-select-spin{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index:999;
+    background: none;
+  }
+  .yui-select-placeholder{
+    opacity: 0.5;
+  }
+  .yui-select-clear{
+    position: absolute;
+    right: 0;
+    top:0;
+    color:#888;
+    cursor: pointer;
+    opacity: 0.5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .yui-select-clear:hover{
+    .iconfont{
+      color: var(--theme-color);
+    }
+  }
+  .yui-select-addonBefore, .yui-select-addonBefore-dark{
+    min-width:50px;
+    height: 100%;
+    font-size:12px;
+    border-right: 0;
+    min-height: 32px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    padding:0 4px;
+    .yui-select-compont{
+      border:0
+    }
+  }
+  .yui-select-addonBefore-dark{
+    background: #3333;
+    color:#888;
+  }
+  .yui-select-compont, .yui-select-compont-dark{
+    flex:8;
+    min-height: 32px;
+    font-size:12px;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 8px;
+    outline: 0;
+    display:flex;
+    align-items: center;
+    user-select: none;
+    box-sizing: border-box;
+    position: relative;
+    .yui-select-compont-multiple-label, .yui-select-compont-multiple-label-dark{
+      padding:2px;
+      display:inline-block;
+      padding-left:4px;
+      background-color: #fafafa;
+      border: 1px solid #e8e8e8;
+      margin:2px;
+    }
+    .yui-select-compont-multiple-label-dark{
+      background-color: #333;
+      color: #888;
+      border-color: #444;
+    }
+  }
+  .yui-select-compont-disabled, .yui-select-compont-disabled-dark{
+    flex:8;
+    height: 32px;
+    font-size:12px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 8px;
+    cursor: not-allowed;
+    border-color: #f2f2f2;
+    background: #f2f2f2;
+    display:flex;
+    align-items: center;
+    user-select: none;
+    opacity: 0.6;
+  }
+  .yui-select-compont-disabled-dark{
+    background: #555;
+    color: #fff;
+    border: 0;
+  }
+  .yui-select-body, .yui-select-body-dark{
+    position:absolute;
+    top:34px;
+    left:0;
+    width:100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    user-select: none;
+    z-index:999999;
+    background: #fff;
+    max-height: 160px;
+    overflow: auto;
+    .yui-select-body-item,
+    .yui-select-body-item-active,
+    .yui-select-body-item-disabled,
+    .yui-select-body-item-dark,
+    .yui-select-body-item-active-dark,
+    .yui-select-body-item-disabled-dark{
+      display: inline-block;
+      width:100%;
+      padding:6px 4px;
+      color:#888;
+      cursor: pointer;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .yui-select-body-item:hover, .yui-select-body-item-dark:hover{
+      background: #f2f2f2;
+    }
+    .yui-select-body-item-active, .yui-select-body-item-active-dark{
+      color: var(--theme-background-color);
+    }
+    .yui-select-body-item-disabled, .yui-select-body-item-disabled-dark{
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+  .yui-select-body-dark{
+    background-color: #222;
+    box-shadow: 0 2px 8px rgba(0,0,0,.75);
+    .yui-select-body-item-dark:hover{
+      background-color: #1e1e1e;
+    }
+  }
+  .yui-select-body::-webkit-scrollbar, .yui-select-body-dark::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+  }
+  .yui-select-body-dark::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 0;
+    background: #666;
+  }
+  .yui-select-body-dark::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 0;
+    background: #333;
+  }
+  .yui-select-body::-webkit-scrollbar-thumb{/*滚动条里面小方块*/
+    border-radius: 0;
+    background: #ddd;
+  }
+  .yui-select-body::-webkit-scrollbar-track{/*滚动条里面轨道*/
+    border-radius: 0;
+    background: rgba(199, 196, 196, 0.1);
+  }
+  .yui-select-addonAfter, .yui-select-addonAfter-dark{
+    min-width:50px;
+    min-height: 32px;
+    font-size:12px;
+    border-left: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    flex:2;
+    .yui-select-compont{
+      border:0
+    }
+  }
+  .yui-select-addonAfter-dark{
+    background: #3333;
+    color:#888;
+  }
+  .icon-xiala1, .icon-xialadown{
+    font-size: 20px;
+    font-weight: 900;
+  }
+}
+.yui-select-dark{
+  background: #222;
+  color: #888;
+  border-color: #333;
+}

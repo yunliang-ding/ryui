@@ -1,0 +1,114 @@
+.yui-cascader, .yui-cascader-dark{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width:100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #262626;
+  background-color: #222;
+  height:32px;
+  cursor: pointer;
+  .yui-cascader-placeholder, .yui-cascader-label{
+    height:100%;
+    font-size: 12px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100% - 20px);
+  }
+  .yui-cascader-placeholder{
+    opacity: 0.3;
+  }
+  .yui-cascader-allow{
+    position: absolute;
+    right:4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .iconfont{
+      color: #444;
+    }
+    .icon-xiala1, .icon-xialadown{
+      font-size: 20px;
+      font-weight: 900;
+    }
+  }
+  .yui-cascader-body-spin{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index:1;
+    background: none;
+  }
+  .yui-cascader-body{
+    height: 160px;
+    display: flex;
+    position: absolute;
+    top: 38px;
+    z-index:3;
+    box-shadow: 0px 1px 2px 1px #171616;
+    background: #1e1e1e;
+  }
+  .yui-cascader-body-col{
+    height: 100%;
+    width: max-content;
+    .yui-cascader-body-col-item,.yui-cascader-body-col-item-active{
+      height: 32px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      width: 100%;
+      cursor: pointer;
+      justify-content: space-between;
+      color: #ccc;
+      span{
+        margin-right:10px;
+      }
+      .iconfont{
+        color: inherit;
+        font-size: 12px;
+        position: relative;
+        top: 2px;
+      }
+    }
+    .yui-cascader-body-col-item:hover{
+      background: #222;
+    }
+    .yui-cascader-body-col-item-active{
+      color: var(--theme-color);
+    }
+  }
+}
+.yui-cascader{
+  background: #fff;
+  border-color: #ccc;
+  .yui-cascader-label, .yui-cascader-placeholder{
+    color:#333;
+  }
+  .yui-cascader-allow{
+    .iconfont{
+      color:#999;
+    }
+  }
+  .yui-cascader-body{
+    box-shadow: 0px 1px 2px 1px #d2cece;
+    background: #fff;
+    .yui-cascader-body-col{
+      .yui-cascader-body-col-item{
+        color: #333;
+      }
+      .yui-cascader-body-col-item:hover{
+        background: #ddd;
+      }
+    }
+  }
+}
