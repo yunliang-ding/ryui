@@ -2,7 +2,6 @@
   cursor: pointer;
   width: fit-content;
   position: relative;
-  background: #1e1e1e;
   .yui-popover-layer{
     width:100%;
     height:100%;
@@ -15,7 +14,7 @@
     box-shadow: 0 0 2px 2px #121111;
     background: inherit;
     color: #fff;
-    position: absolute;
+    position: fixed;
     top: 0;
     border-radius: 2px;
     height: fit-content;
@@ -25,6 +24,7 @@
     align-items: center;
     justify-content: center;
     z-index:2;
+    background-color: #1e1e1e;
     .yui-popover-inner-layer{
       width: 100%;
       height: 100%;
@@ -49,10 +49,10 @@
   }
 }
 .yui-popover{
-  background: #fff;
   .yui-popover-inner{
     box-shadow: 0 0 2px 2px #f3eeee;
     color: #333;
+    background-color: #fff;
     .yui-popover-inner-allow{
       box-shadow: 0 0 2px 2px #f3eeee;
       background: #fff;

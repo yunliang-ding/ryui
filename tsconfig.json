@@ -12,7 +12,9 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "removeComments": true // 是否移除注释
+    "removeComments": true, // 是否移除注释
+    "esModuleInterop": true
+
   },
   "exclude": ["node_modules"]
 }

@@ -13,6 +13,7 @@ class Input extends React.Component {
     style?: any,
     placeholder?: string,
     onBlur?: any,
+    onFocus?:any,
     defaultValue?: any
   }
   constructor(props) {
@@ -62,6 +63,11 @@ class Input extends React.Component {
         onBlur={
           (e) => {
             this.props.onBlur && this.props.onBlur(e)
+          }
+        }
+        onFocus={
+          (e) => {
+            this.props.onFocus && this.props.onFocus(e)
           }
         }
       />

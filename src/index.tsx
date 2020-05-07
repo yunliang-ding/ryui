@@ -1,6 +1,7 @@
 import { Input } from './input/index'
 import { Select } from './select/index'
 import { Button } from './button/index'
+import { Badge } from './badge/index'
 import { CheckBox } from './checkbox/index'
 import { Radio } from './radio/index'
 import { Alert } from './alert/index'
@@ -21,11 +22,13 @@ import { Drawer } from './drawer/index'
 import { Modal } from './modal/index'
 import { Steps } from './steps/index'
 import { Carousel } from './carousel/index'
+import { DatePicker } from './datepicker/index'
 import './theme.less'
 export {
   Input,
   Select,
   Button,
+  Badge,
   CheckBox,
   Radio,
   Alert,
@@ -45,5 +48,6 @@ export {
   Drawer,
   Modal,
   Steps,
-  Carousel
+  Carousel,
+  DatePicker
 }

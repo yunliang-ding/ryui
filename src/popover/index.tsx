@@ -1,15 +1,18 @@
 import * as React from 'react'
 import './index.less'
-const Window:any = window
+const Window: any = window
 class Popover extends React.Component {
+  [x: string]: any
   props: {
-    placement?:string,
-    showAllow?:boolean,
-    dark?:boolean,
-    onChange?:Function,
-    trigger?:string,
-    content?:any,
-    children?:any
+    placement?: string,
+    showAllow?: boolean,
+    dark?: boolean,
+    onChange?: Function,
+    trigger?: string,
+    content?: any,
+    children?: any,
+    style?: any,
+    onContext?:any
   }
   state: any
   node: any
@@ -22,27 +25,28 @@ class Popover extends React.Component {
       visable: false
     }
   }
-  componentDidMount() {
+  componentDidUpdate() {
     let placement = this.props.placement || 'right' // 默认显示在右侧
+    let { left, top, height, width } = this.node.getBoundingClientRect()
     let parentHeight = parseFloat(window.getComputedStyle(this.node).height)
     let parentWidth = parseFloat(window.getComputedStyle(this.node).width)
     let innerHeight = parseFloat(window.getComputedStyle(this.innerNode).height)
     let innerWidth = parseFloat(window.getComputedStyle(this.innerNode).width)
     if (placement === 'right') {
-      this.innerNode.style.left = parentWidth + 10
-      this.innerNode.style.top = (parentHeight - innerHeight) / 2
+      this.innerNode.style.left = left + width + 10
+      this.innerNode.style.top = top + (height - innerHeight) / 2
       this.props.showAllow && (this.allowNode.style.left = -2)
     } else if (placement === 'left') {
-      this.innerNode.style.right = parentWidth + 10
-      this.innerNode.style.top = (parentHeight - innerHeight) / 2
+      this.innerNode.style.right = left - parentWidth - 10
+      this.innerNode.style.top = top + (parentHeight - innerHeight) / 2
       this.props.showAllow && (this.allowNode.style.right = -2)
     } else if (placement === 'top') {
-      this.innerNode.style.left = (parentWidth - innerWidth) / 2
-      this.innerNode.style.top = - (innerHeight + 6)
+      this.innerNode.style.left = left
+      this.innerNode.style.top = top - innerHeight - 6
       this.props.showAllow && (this.allowNode.style.bottom = -2)
     } else if (placement === 'bottom') {
-      this.innerNode.style.left = (parentWidth - innerWidth) / 2
-      this.innerNode.style.top = parentHeight + 6
+      this.innerNode.style.left = left
+      this.innerNode.style.top = top + height + 6
       this.props.showAllow && (this.allowNode.style.top = -2)
     }
   }
@@ -57,9 +61,10 @@ class Popover extends React.Component {
   }
   render() {
     const { visable } = this.state
-    const { showAllow, trigger } = this.props
+    const { showAllow, trigger, style } = this.props
     let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div
+      style={style}
       className={'yui-popover' + theme}
       ref={(node) => { this.node = node }}
       onMouseLeave={
@@ -84,6 +89,7 @@ class Popover extends React.Component {
       }
       onContextMenu={
         (e) => {
+          this.props.onContext && this.props.onContext(e)
           this.setVisable(true)
           e.preventDefault()
         }
@@ -131,7 +137,11 @@ class Popover extends React.Component {
       >
         <div className='yui-popover-inner-layer' />
         {showAllow && <div className='yui-popover-inner-allow' ref={(allowNode) => { this.allowNode = allowNode }} />}
-        <div className='yui-popover-inner-content'>
+        <div className='yui-popover-inner-content' onClick={
+          () => {
+            this.setVisable(false)
+          }
+        }>
           {this.props.content}
         </div>
       </div>

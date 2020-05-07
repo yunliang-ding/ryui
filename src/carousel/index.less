@@ -1,3 +1,80 @@
 .yui-carousel, .yui-carousel-dark{
-
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0px 0px 3px 1px #101010;
+  color:#fff;
+  position: relative;
+  .yui-carousel-page{
+    width:100%;
+    height: 100%;
+    display:inline-block;
+    position: absolute;
+    z-index:1;
+  }
+  .yui-carousel-before, .yui-carousel-next{
+    position: absolute;
+    z-index:2;
+    top: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    left: 10px;
+    background: #22222294;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: .5s;
+    font-weight: 700;
+    &:hover{
+      background: #22222249;
+    }
+    .iconfont{
+      font-size:22px;
+      cursor: pointer;
+    }
+  }
+  .yui-carousel-next{
+    right:10px;
+    left:auto;
+  }
+  .yui-carousel-legend{
+    position: absolute;
+    z-index:3;
+    bottom:0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    .yui-carousel-legend-box{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2f2f2fb3;
+      height: 18px;
+      border-radius: 20px;
+      padding: 0 4px;
+      .yui-carousel-legend-box-item, .yui-carousel-legend-box-item-active{
+        width: 10px;
+        height: 10px;
+        background: #7b7979;
+        margin: 4px;
+        border-radius: 50%;
+        transition: .5s;
+        cursor: pointer;
+        &:hover{
+          background: #fff;
+        }
+      }
+      .yui-carousel-legend-box-item-active{
+        background: #fff;
+      }
+    }
+  }
+}
+.yui-carousel{
+  box-shadow: 0px 0px 3px 1px #c4c2c2;
 }

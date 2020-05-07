@@ -19,16 +19,26 @@ import './index.less'
 class Message {
   duration: any
   dark: any
+  position:string
   constructor(props) {
     this.duration = props.duration || 3
     this.dark = props.dark || Window.yuiIsDark
+    this.position = props.position || 'center'
   }
   open = (type, content) => {
     const theme = this.dark ? '-dark' : ''
     let messageContainer = document.createElement("div");
     let length = $$('.yui-message'+theme).length
     messageContainer.className = 'yui-message'+theme
-    messageContainer.style.top = 50 + length * 60 + 'px'
+    if(this.position === 'br'){
+      messageContainer.style.left = 'auto'
+      messageContainer.style.top = 'auto'
+      messageContainer.style.bottom = 50 + length * 60 + 'px'
+      messageContainer.style.right = '20px'
+    } else {
+      messageContainer.style.top = 50 + length * 60 + 'px'
+      messageContainer.style.top = 50 + length * 60 + 'px'
+    }
     $('body').appendChild(messageContainer)
     setTimeout(() => {
       messageContainer.remove()

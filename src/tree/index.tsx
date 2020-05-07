@@ -3,6 +3,7 @@ import './index.less'
 import { CheckBox } from '../index'
 const Window: any = window
 class Tree extends React.Component {
+  [x: string]: any
   state: any
   props: {
     style?: any
@@ -24,6 +25,7 @@ class Tree extends React.Component {
   }
   componentWillReceiveProps(props) {
     this.state = {
+      treeData: props.treeData,
       checkedKeys: props.defaultCheckedKeys || [],
       expandedKeys: props.defaultExpandedKeys || []
     }
@@ -33,7 +35,6 @@ class Tree extends React.Component {
     index > -1
       ? this.state.expandedKeys.splice(index, 1)
       : this.state.expandedKeys.push(key)
-    console.log(this.state.expandedKeys)
     this.setState({
       expandedKeys: this.state.expandedKeys
     }, () => {
@@ -63,7 +64,7 @@ class Tree extends React.Component {
       }
     })
   }
-  callBack = (children, marginLeft) => {
+  callBack = (children, paddingLeft) => {
     let { expandedKeys, checkedKeys } = this.state
     return children && children.map(node => {
       let className = checkedKeys.includes(node.key) ? "yui-tree-node yui-tree-leaf-active" : "yui-tree-node yui-tree-leaf"
@@ -71,23 +72,32 @@ class Tree extends React.Component {
         key={node.key}
         className={className}
         style={{
-          marginLeft
+          paddingLeft
         }}
-      >
-        <div
-          className='yui-tree-icon'
-          onClick={
-            () => {
-              this.expandedKeysToggle(node.key)
+        onClick={
+          () => {
+            this.expandedKeysToggle(node.key)
+            if (node.disabled) {
+              return
             }
+            this.setState({
+              checkedKeys: [node.key]
+            }, () => {
+              if (this.props.onCheck) {
+                this.props.onCheck(this.state.checkedKeys, node)
+              }
+            })
           }
-        >
+        }
+      >
+        <div className='yui-tree-icon'>
           {
-            node.children && <i className={expandedKeys.includes(node.key) ? 'iconfont icon-jiantou32' : 'iconfont icon-jiantou34'} />
+            node.children ? <i className={expandedKeys.includes(node.key) ? 'iconfont icon-jiantou32' : 'iconfont icon-jiantou34'} /> : <i className={`iconfont ${node.icon}`} /> 
           }
         </div>
         {
           this.props.checkable ? <CheckBox
+            dark={this.props.dark}
             value={checkedKeys.includes(node.key) ? [node.key] : []}
             dataList={[{ label: node.label, value: node.key, disabled: node.disabled }]}
             onChange={
@@ -97,31 +107,17 @@ class Tree extends React.Component {
             }
           /> : <span
             className='yui-tree-label'
-            onClick={
-              () => {
-                if (node.disabled) {
-                  return
-                }
-                this.setState({
-                  checkedKeys: [node.key]
-                }, () => {
-                  if (this.props.onCheck) {
-                    this.props.onCheck(this.state.checkedKeys)
-                  }
-                })
-              }
-            }
             style={{
               cursor: node.disabled ? 'not-allowed' : 'pointer',
               opacity: node.disabled ? 0.5 : 1
             }}>{node.label}</span>
         }
       </div >,
-      expandedKeys.includes(node.key) ? this.callBack(node.children, marginLeft + 20) : null]
+      expandedKeys.includes(node.key) ? this.callBack(node.children, paddingLeft + 8) : null]
     })
   }
   render() {
-    let treeDom = this.callBack(this.state.treeData, 0)
+    let treeDom = this.callBack(this.state.treeData, 8)
     const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     return <div className={"yui-tree" + theme} style={this.props.style}>
       {treeDom}

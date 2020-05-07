@@ -36,7 +36,7 @@ class Select extends React.Component {
   selectNode: any;
   selectBodyNode: any;
   componentDidUpdate() {
-    if (this.props.style.border !== 0) {
+    if (this.props.style && this.props.style.border !== 0) {
       if (this.state.isOpen) {
         this.selectNode.style.border = '1px solid var(--theme-color)'
       } else {
