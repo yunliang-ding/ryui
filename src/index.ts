@@ -1,4 +1,4 @@
-import '../style/index.less'
+import './style/index.less'
 export { Input } from './input/index'
 export { Select } from './select/index'
 export { Button } from './button/index'
