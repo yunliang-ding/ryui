@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './index.less'
 import { CheckBox } from '../index'
 const Window: any = window
 class Tree extends React.Component {

@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Input, Button, Select } from '../index'
 import { DateUtil } from './util'
-import './index.less'
 const Window: any = window
 class DatePicker extends React.Component {
   yearList = []

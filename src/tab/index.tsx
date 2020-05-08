@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './index.less'
 const Window: any = window
 class Tabs extends React.Component<any, any> {
   [x: string]: any

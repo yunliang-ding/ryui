@@ -15,7 +15,6 @@ const colorMapping = {
   3: '#f4ea2a',
   4: '#39a9f4'
 }
-import './index.less'
 class Message {
   duration: any
   dark: any

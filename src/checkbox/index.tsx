@@ -1,5 +1,4 @@
 import * as React from "react"
-import './index.less'
 const Window: any = window
 class CheckBox extends React.Component {
   props: {

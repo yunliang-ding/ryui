@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './index.less'
 import { Input, Select } from '../index'
 const Window: any = window
 class Pagination extends React.Component {

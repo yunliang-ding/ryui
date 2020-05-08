@@ -1,5 +1,4 @@
 import * as React from "react"
-import './index.less'
 const Window: any = window
 const iconMapping = {
   success: 'icon-message_SendSuccessfully',

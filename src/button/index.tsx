@@ -1,5 +1,4 @@
 import * as React from "react"
-import './index.less'
 const Window:any = window
 class Button extends React.Component {
   props: {
