@@ -112,7 +112,7 @@ class Cascader extends React.Component {
       }
     >
       <div className='yui-cascader-allow'>
-        <i className={isOpen ? 'iconfont-yui icon-xiala1' : 'iconfont-yui icon-xialadown'}></i>
+        <i className={isOpen ? 'iconfont icon-xiala1' : 'iconfont icon-xialadown'}></i>
       </div>
       {
         label ? <div className='yui-cascader-label'>{label}</div> : <div className='yui-cascader-placeholder'>{placeholder || '请选择'}</div>
@@ -146,7 +146,7 @@ class Cascader extends React.Component {
                         }
                       >
                         <span>{item.label}</span>
-                        {item.children && <i className='iconfont-yui icon-jiantou1'></i>}
+                        {item.children && <i className='iconfont icon-jiantou1'></i>}
                       </div>
                     })
                   }

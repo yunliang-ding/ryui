@@ -22,7 +22,7 @@ class Loading extends React.Component {
         </div>
         <div className="yui-loading-opacity" style={{ display: loading ? "block" : "none" }}>
           <div className="message">
-            <i style={iconStyle} className={'iconfont-yui ' + icon}></i>
+            <i style={iconStyle} className={'iconfont ' + icon}></i>
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ class Drawer extends React.Component {
         <div>
           {this.props.title}
         </div>
-        {closable && <i className='iconfont-yui icon-guanbi' onClick={this.close}></i>}
+        {closable && <i className='iconfont icon-guanbi' onClick={this.close}></i>}
       </div>
       {mask !== false && <div className='yui-drawer-mask' onClick={this.close} />}
       <div className='yui-drawer-body' style={{

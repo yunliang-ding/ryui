@@ -58,7 +58,7 @@ class Switch extends React.Component {
     >
       <div className={checked ? 'yui-switch-addon-checked' : 'yui-switch-addon'}>
         {
-          loading && <i className='iconfont-yui icon-loading' style={{
+          loading && <i className='iconfont icon-loading' style={{
             fontSize: 10,
             color: checked ? 'var(--theme-color)' : 'none',
             animation: 'spin 1.2s linear infinite'

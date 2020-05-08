@@ -36,11 +36,11 @@ class Alert extends React.Component {
     let icon = iconMapping[type]
     return show && <div className={`yui-alert${theme} yui-alert${theme}-${type}`} style={style}>
       <div className='yui-alert-message'>
-        <i className={`iconfont-yui ${icon}`}></i>
+        <i className={`iconfont ${icon}`}></i>
         <span>{this.props.message}</span>
       </div>
       {
-        closable && <i className={`iconfont-yui icon-guanbi`} onClick={this.close}></i>
+        closable && <i className={`iconfont icon-guanbi`} onClick={this.close}></i>
       }
     </div>
   }
