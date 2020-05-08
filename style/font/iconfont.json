@@ -1,7 +1,7 @@
 {
   "id": "1694690",
   "name": "ryui",
-  "font_family": "iconfont",
+  "font_family": "iconfont-yui",
   "css_prefix_text": "icon-",
   "description": "ryui组件库图标",
   "glyphs": [

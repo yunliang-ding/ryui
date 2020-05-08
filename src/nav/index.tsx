@@ -151,7 +151,7 @@ class Nav extends React.Component {
                       }
                     }
                   >
-                    <span><i className={"iconfont " + sub.icon}></i>{sub.label}</span>
+                    <span><i className={"iconfont-yui " + sub.icon}></i>{sub.label}</span>
                   </div>
                 )
               })
@@ -169,11 +169,11 @@ class Nav extends React.Component {
                     }
                   }
                 >
-                  <span><i className={"iconfont " + item.icon}></i>{item.label}</span>
+                  <span><i className={"iconfont-yui " + item.icon}></i>{item.label}</span>
                   {
                     item.subMenu
                       ?
-                      <i className={item.isOpen ? 'iconfont icon-jiantou32' : 'iconfont icon-jiantou'} style={{ paddingLeft: 20, fontSize: 16 }} />
+                      <i className={item.isOpen ? 'iconfont-yui icon-jiantou32' : 'iconfont-yui icon-jiantou'} style={{ paddingLeft: 20, fontSize: 16 }} />
                       :
                       null
                   }
@@ -199,7 +199,7 @@ class Nav extends React.Component {
                     }
                   }
                 >
-                  <span><i className={"iconfont " + item.icon}></i>{item.label}</span>
+                  <span><i className={"iconfont-yui " + item.icon}></i>{item.label}</span>
                 </div>
               )
             }
@@ -228,7 +228,7 @@ class Nav extends React.Component {
                       }
                     }
                   >
-                    <span><i className={"iconfont " + item.icon}></i></span>
+                    <span><i className={"iconfont-yui " + item.icon}></i></span>
                   </div>
                 )
               } else { // 没有二级的一级菜单
@@ -247,7 +247,7 @@ class Nav extends React.Component {
                       }
                     }
                   >
-                    <span><i className={"iconfont " + item.icon}></i></span>
+                    <span><i className={"iconfont-yui " + item.icon}></i></span>
                   </div>
                 )
               }

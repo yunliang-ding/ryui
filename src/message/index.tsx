@@ -63,11 +63,11 @@ class Message {
     let icon = typeMapping[type]
     return <div className='yui-message-content'>
       <div className='yui-message-content-icon'>
-        <i className={'iconfont ' + icon} style={{color: colorMapping[type]}}></i>
+        <i className={'iconfont-yui ' + icon} style={{color: colorMapping[type]}}></i>
       </div>
       <div className='yui-message-content-message'>{content}</div>
       <div className='yui-message-content-close'>
-        <i className='iconfont icon-guanbi' onClick={
+        <i className='iconfont-yui icon-guanbi' onClick={
           (e) => {
             this.colse(e)
           }
