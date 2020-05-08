@@ -1,9 +1,10 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = {
   entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'lib/'),
-    filename: 'index.js'
+    filename: 'app.js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json']
@@ -26,6 +27,7 @@ const config = {
     },{
       test: /\.css$/,
       use: [
+        // { loader: MiniCssExtractPlugin.loader },
         { loader: 'css-loader' }
       ]
     },
@@ -35,6 +37,7 @@ const config = {
         path.resolve(__dirname, './src')
       ],
       use: [
+        // { loader: MiniCssExtractPlugin.loader },
         {
           loader: 'css-loader'
         },
@@ -50,6 +53,11 @@ const config = {
       use: ['ts-loader']
     }]
   },
+  // plugins: [
+  //   new MiniCssExtractPlugin({
+  //     filename: 'style/[name].css'
+  //   }),
+  // ],
   mode: 'production'
 }
 module.exports = config
