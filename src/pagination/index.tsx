@@ -69,7 +69,7 @@ class Pagination extends React.Component {
               }
             }
           >
-            {[-1, -2].indexOf(item) > -1 ? <i className='iconfont icon-moreread'></i> : item}
+            {[-1, -2].indexOf(item) > -1 ? <i className='iconfont-yui icon-moreread'></i> : item}
           </div>
         )
       })
@@ -99,7 +99,7 @@ class Pagination extends React.Component {
             }
           }
         >
-          <i className='iconfont icon-icon-jiantouzuo'></i>
+          <i className='iconfont-yui icon-icon-jiantouzuo'></i>
         </div>
         {page}
         <div className={this.state.current == totalPage ? "yui-pagination-next-disabled" : "yui-pagination-next"}
@@ -111,7 +111,7 @@ class Pagination extends React.Component {
             }
           }
         >
-          <i className='iconfont icon-jiantou2'></i>
+          <i className='iconfont-yui icon-jiantou2'></i>
         </div>
         {
           this.props.pageSizeOptions && <div className='yui-pagination-jump'>

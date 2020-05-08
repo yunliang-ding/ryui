@@ -43,7 +43,7 @@ class Tabs extends React.Component<any, any> {
             {tab.label}
             {
               close ? <i
-                className="iconfont icon-guanbi"
+                className="iconfont-yui icon-guanbi"
                 style={{
                   visibility: activeKey === tab.key ? 'visible' : 'hidden',
                   marginLeft: 8,
@@ -64,7 +64,7 @@ class Tabs extends React.Component<any, any> {
 
                   }
                 }
-              /> : <i className="iconfont" style={{
+              /> : <i className="iconfont-yui" style={{
                 visibility: 'hidden'
               }} />
             }
