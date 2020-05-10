@@ -62,9 +62,9 @@ class Modal extends React.Component {
       {
         footer !== false && <div className='yui-modal-footer'>
           {
-            footer === null ? [
-              <Button type='primary' label='确定' style={{ width: 60 }} onClick={this.ok} />,
-              <Button label='取消' style={{ width: 60 }} onClick={this.close} />
+            (footer === null || footer === undefined) ? [
+              <Button type='primary' dark={this.props.dark} label='确定' style={{ width: 60 }} onClick={this.ok} />,
+              <Button label='取消' dark={this.props.dark} style={{ width: 60 }} onClick={this.close} />
             ] : footer
           }
         </div>

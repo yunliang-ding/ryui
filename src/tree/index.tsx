@@ -90,9 +90,7 @@ class Tree extends React.Component {
         }
       >
         <div className='yui-tree-icon'>
-          {
-            node.children ? <i className={expandedKeys.includes(node.key) ? 'iconfont icon-jiantou32' : 'iconfont icon-jiantou34'} /> : <i className={`iconfont ${node.icon}`} style={{color: node.iconColor}} /> 
-          }
+          <i className={node.icon} style={{color: node.iconColor}} /> 
         </div>
         {
           this.props.checkable ? <CheckBox
