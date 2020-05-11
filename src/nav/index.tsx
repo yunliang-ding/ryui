@@ -260,7 +260,7 @@ class Nav extends React.Component {
     let style = {}
     if (this.props.style) {
       let width = this.props.collapsed ? (this.props.collapsedWidth || 40) : (this.props.style.width || '100%')
-      style = Object.assign(this.props.style, {
+      style = Object.assign({}, this.props.style, {
         width
       })
     }
