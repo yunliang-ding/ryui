@@ -12,7 +12,7 @@ class Loading extends React.Component {
   render() {
     const theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let { iconStyle, icon, loading } = this.props
-    icon = icon || 'icon-loading'
+    icon = icon || 'yuicon icon-loading'
     return (
       <div className={"yui-loading" + theme} style={this.props.style}>
         <div className="yui-loading-body" style={{
@@ -22,7 +22,7 @@ class Loading extends React.Component {
         </div>
         <div className="yui-loading-opacity" style={{ display: loading ? "block" : "none" }}>
           <div className="message">
-            <i style={iconStyle} className={'iconfont ' + icon}></i>
+            <i style={iconStyle} className={icon}></i>
           </div>
         </div>
       </div>

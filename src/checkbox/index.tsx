@@ -51,7 +51,7 @@ class CheckBox extends React.Component {
                 value.includes(item.value)
                   ?
                   <span className="value-active-center">
-                    <i className="iconfont icon-duihao" style={{ fontSize: 12 }} />
+                    <i className="yuicon icon-duihao" style={{ fontSize: 12 }} />
                   </span>
                   :
                   null
@@ -75,7 +75,7 @@ class CheckBox extends React.Component {
                     value.includes(item.value)
                       ?
                       <span className="value-active-center">
-                        <i className="iconfont icon-duihao" style={{ fontSize: 12 }} />
+                        <i className="yuicon icon-duihao" style={{ fontSize: 12 }} />
                       </span>
                       :
                       null

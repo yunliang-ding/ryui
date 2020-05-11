@@ -84,7 +84,7 @@ class Select extends React.Component {
                 this.props.onChange('')
               }
             }>
-              <i className='iconfont icon-cuo'></i>
+              <i className='yuicon icon-cuo'></i>
             </div>
           }
         </div>
@@ -92,9 +92,9 @@ class Select extends React.Component {
           {
             this.state.isOpen
               ?
-              <i className={"iconfont icon-xiala1"} />
+              <i className={"yuicon icon-xiala1"} />
               :
-              <i className={"iconfont icon-xialadown"} />
+              <i className={"yuicon icon-xialadown"} />
           }
         </div>
         {
@@ -150,7 +150,7 @@ class Select extends React.Component {
               }
             }>
               {m.label}
-              <i className={"iconfont icon-guanbi"} style={{ paddingLeft: 4, fontSize: 12, cursor: 'pointer' }} onClick={
+              <i className={"yuicon icon-guanbi"} style={{ paddingLeft: 4, fontSize: 12, cursor: 'pointer' }} onClick={
                 () => {
                   value.splice(index, 1)
                   this.props.onChange(value)
@@ -170,7 +170,7 @@ class Select extends React.Component {
                 this.props.onChange([])
               }
             }>
-              <i className='iconfont icon-cuo'></i>
+              <i className='yuicon icon-cuo'></i>
             </div>
           }
         </div>
@@ -178,9 +178,9 @@ class Select extends React.Component {
           {
             this.state.isOpen
               ?
-              <i className={"iconfont icon-xiala1"} />
+              <i className={"yuicon icon-xiala1"} />
               :
-              <i className={"iconfont icon-xialadown"} />
+              <i className={"yuicon icon-xialadown"} />
           }
         </div>
         {
@@ -225,7 +225,7 @@ class Select extends React.Component {
           {label || this.props.placeholder || '请选择'}
         </div>
         <div style={{ width: '10%' }}>
-          <i className={"iconfont icon-xialadown"} />
+          <i className={"yuicon icon-xialadown"} />
         </div>
       </div>
     }
