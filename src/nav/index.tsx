@@ -173,7 +173,7 @@ class Nav extends React.Component {
                   {
                     item.subMenu
                       ?
-                      <i className={item.isOpen ? 'yuicon icon-jiantou32' : 'yuicon icon-jiantou'} style={{ paddingLeft: 20, fontSize: 16 }} />
+                      <i className={item.isOpen ? 'yuicon yuicon-jiantou32' : 'yuicon yuicon-jiantou'} style={{ paddingLeft: 20, fontSize: 16 }} />
                       :
                       null
                   }

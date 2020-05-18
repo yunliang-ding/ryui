@@ -43,7 +43,7 @@ class Tabs extends React.Component<any, any> {
             {tab.label}
             {
               close ? <i
-                className="yuicon icon-guanbi"
+                className="yuicon yuicon-guanbi"
                 style={{
                   visibility: activeKey === tab.key ? 'visible' : 'hidden',
                   marginLeft: 8,

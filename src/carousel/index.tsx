@@ -64,14 +64,14 @@ class Carousel extends React.Component {
           this.setCurrentPage(this.state.currentPage - 1)
         }
       }>
-        <i className='yuicon icon-icon-jiantouzuo'></i>
+        <i className='yuicon yuicon-yuicon-jiantouzuo'></i>
       </div>
       <div className='yui-carousel-next' onClick={
         () => {
           this.setCurrentPage(this.state.currentPage + 1)
         }
       }>
-        <i className='yuicon icon-jiantou2'></i>
+        <i className='yuicon yuicon-jiantou2'></i>
       </div>
       {
         pages && pages.map((page, index) => {

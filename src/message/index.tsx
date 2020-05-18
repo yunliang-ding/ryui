@@ -4,10 +4,10 @@ const $: any = document.querySelector.bind(document)
 const $$: any = document.querySelectorAll.bind(document)
 const Window:any = window
 const typeMapping = {
-  1: 'icon-message_SendSuccessfully',
-  2: 'icon-cuo',
-  3: 'icon-info_warning',
-  4: 'icon-warning'
+  1: 'yuicon-message_SendSuccessfully',
+  2: 'yuicon-cuo',
+  3: 'yuicon-info_warning',
+  4: 'yuicon-warning'
 }
 const colorMapping = {
   1: '#1ac7aa',
@@ -67,7 +67,7 @@ class Message {
       </div>
       <div className='yui-message-content-message'>{content}</div>
       <div className='yui-message-content-close'>
-        <i className='yuicon icon-guanbi' onClick={
+        <i className='yuicon yuicon-guanbi' onClick={
           (e) => {
             this.colse(e)
           }

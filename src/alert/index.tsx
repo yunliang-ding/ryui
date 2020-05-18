@@ -1,10 +1,10 @@
 import * as React from "react"
 const Window: any = window
 const iconMapping = {
-  success: 'icon-message_SendSuccessfully',
-  info: 'icon-warning',
-  warning: 'icon-info_warning',
-  error: 'icon-cuo'
+  success: 'yuicon-message_SendSuccessfully',
+  info: 'yuicon-warning',
+  warning: 'yuicon-info_warning',
+  error: 'yuicon-cuo'
 }
 class Alert extends React.Component {
   props: {
@@ -40,7 +40,7 @@ class Alert extends React.Component {
         <span>{this.props.message}</span>
       </div>
       {
-        closable && <i className={`yuicon icon-guanbi`} onClick={this.close}></i>
+        closable && <i className={`yuicon yuicon-guanbi`} onClick={this.close}></i>
       }
     </div>
   }

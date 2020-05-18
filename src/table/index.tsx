@@ -49,7 +49,7 @@ class Table extends React.Component {
                       ?
                       <div className="yui-table-header-sort">
                         <i
-                          className="yuicon icon-jiantou"
+                          className="yuicon yuicon-jiantou"
                           style={{ height: 8 }}
                           onClick={
                             () => {
@@ -58,7 +58,7 @@ class Table extends React.Component {
                           }
                         />
                         <i
-                          className="yuicon icon-jiantou32"
+                          className="yuicon yuicon-jiantou32"
                           onClick={
                             () => {
                               this.sort(m.sort, true)

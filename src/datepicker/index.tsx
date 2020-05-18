@@ -121,14 +121,14 @@ class DatePicker extends React.Component {
                 this.setCalendar(this.dateUtil.date.getTime() - (this.dateUtil.isLeapYear() ? 366 : 355) * 24 * 60 * 60 * 1000)
               }
             }>
-              <i className='yuicon icon-next'></i>
+              <i className='yuicon yuicon-next'></i>
             </div>
             <div className='picker-tools-before picker-tools-before-month' onClick={
               () => {
                 this.setCalendar(this.dateUtil.date.getTime() - this.dateUtil.getDateNumberByMonth(this.dateUtil.date.getMonth() + 1) * 24 * 60 * 60 * 1000)
               }
             }>
-              <i className='yuicon icon-icon-jiantouzuo'></i>
+              <i className='yuicon yuicon-yuicon-jiantouzuo'></i>
             </div>
             <div className='picker-tools-date'>
               <Select
@@ -171,14 +171,14 @@ class DatePicker extends React.Component {
                 this.setCalendar(this.dateUtil.date.getTime() + this.dateUtil.getDateNumberByMonth(this.dateUtil.date.getMonth() + 1) * 24 * 60 * 60 * 1000)
               }
             }>
-              <i className='yuicon icon-jiantou2'></i>
+              <i className='yuicon yuicon-jiantou2'></i>
             </div>
             <div className='picker-tools-next' onClick={
               () => {
                 this.setCalendar(this.dateUtil.date.getTime() + (this.dateUtil.isLeapYear() ? 366 : 355) * 24 * 60 * 60 * 1000)
               }
             }>
-              <i className='yuicon icon-next'></i>
+              <i className='yuicon yuicon-next'></i>
             </div>
           </div>
           <div className='yui-date-picker-body-header'>
