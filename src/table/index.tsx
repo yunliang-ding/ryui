@@ -89,7 +89,7 @@ class Table extends React.Component {
                     return (
                       <div key={"sub" + m.key} className="yui-table-body-td" style={{ width }}>
                         {
-                          key.render ? key.render(m[key.dataIndex]) : <span>{m[key.dataIndex]}</span>
+                          key.render ? key.render(m[key.dataIndex], m) : <span>{m[key.dataIndex]}</span>
                         }
                       </div>
                     )

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Input, Select } from '../index'
 const Window: any = window
 class Pagination extends React.Component {
+  [x: string]: any
   state: any
   props: {
     current: number,
@@ -10,7 +11,7 @@ class Pagination extends React.Component {
     onChange?: any,
     dark?: boolean,
     pageSizeOptions?: any,
-    onPageSizeChange?:any,
+    onPageSizeChange?: any,
     showJumper?: boolean
   }
   constructor(props) {
@@ -41,7 +42,7 @@ class Pagination extends React.Component {
   render() {
     let current = this.state.current
     let pageSize = this.state.pageSize
-    let totalPage = this.state.total / pageSize + (this.state.total % pageSize > 0 ? 1 : 0)
+    let totalPage = Math.ceil(this.state.total / pageSize)
     let page = [];
     let theme = this.props.dark || Window.yuiIsDark ? '-dark' : ''
     let arr = [1]
@@ -99,7 +100,7 @@ class Pagination extends React.Component {
             }
           }
         >
-          <i className='yuicon yuicon-yuicon-jiantouzuo'></i>
+          <i className='yuicon yuicon-jiantou2'></i>
         </div>
         {page}
         <div className={this.state.current == totalPage ? "yui-pagination-next-disabled" : "yui-pagination-next"}
@@ -127,7 +128,7 @@ class Pagination extends React.Component {
                 }
               }
               dataList={
-                this.props.pageSizeOptions.map(value=>{
+                this.props.pageSizeOptions.map(value => {
                   return {
                     label: `每页${value}条`,
                     value
@@ -143,7 +144,7 @@ class Pagination extends React.Component {
             <Input style={{ width: 50 }} onBlur={
               (e) => {
                 let current = window.parseInt(e.target.value)
-                if(!isNaN(current)){
+                if (!isNaN(current)) {
                   this.setState({
                     current: current > totalPage ? totalPage : current
                   })
