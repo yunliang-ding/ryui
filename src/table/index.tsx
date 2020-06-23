@@ -25,13 +25,15 @@ class Table extends React.Component {
       colmun: this.props.colmun
     })
   }
-  sort(sort: any, isReverse: boolean) {
-    this.state.data.sort(sort)
-    this.setState({
-      data: isReverse ? this.state.data.reverse() : this.state.data
-    }, () => {
-      this.props.onSort && this.props.onSort()
-    })
+  sort(sort: any, isReverse: boolean, key: string) {
+    if (this.props.onSort) { // 按照自己的逻辑，不会走默认排序
+      this.props.onSort(key, isReverse ? 'desc' : 'asc')
+    } else {
+      this.state.data.sort(sort)
+      this.setState({
+        data: isReverse ? this.state.data.reverse() : this.state.data
+      })
+    }
   }
   render() {
     let { colmun, data } = this.state;
@@ -54,7 +56,7 @@ class Table extends React.Component {
                           style={{ height: 8 }}
                           onClick={
                             () => {
-                              this.sort(m.sort, false)
+                              this.sort(m.sorter, false, m.dataIndex)
                             }
                           }
                         />
@@ -62,7 +64,7 @@ class Table extends React.Component {
                           className="yuicon yuicon-jiantou32"
                           onClick={
                             () => {
-                              this.sort(m.sort, true)
+                              this.sort(m.sorter, true, m.dataIndex)
                             }
                           }
                         />
