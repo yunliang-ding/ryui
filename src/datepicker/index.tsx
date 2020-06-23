@@ -14,7 +14,8 @@ class DatePicker extends React.Component {
     onChange: any,
     placeholder?: string,
     addonBefore?: any,
-    addonAfter?: any
+    addonAfter?: any,
+    format?: string
   }
   constructor(props) {
     super(props)

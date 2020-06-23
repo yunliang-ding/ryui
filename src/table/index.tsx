@@ -1,6 +1,7 @@
 import * as React from 'react'
 const Window: any = window
 class Table extends React.Component {
+  [x: string]: any
   state = {
     colmun: [],
     data: []
@@ -84,12 +85,12 @@ class Table extends React.Component {
                   "yui-table-body-tr"
               }>
                 {
-                  colmun.map((key) => {
-                    let width = m.width || (100 / colmun.length + '%')
+                  colmun.map((col) => {
+                    let width = col.width || (100 / colmun.length + '%')
                     return (
                       <div key={"sub" + m.key} className="yui-table-body-td" style={{ width }}>
                         {
-                          key.render ? key.render(m[key.dataIndex], m) : <span>{m[key.dataIndex]}</span>
+                          col.render ? col.render(m[col.dataIndex], m) : <span>{m[col.dataIndex]}</span>
                         }
                       </div>
                     )

@@ -117,6 +117,7 @@ class Pagination extends React.Component {
         {
           this.props.pageSizeOptions && <div className='yui-pagination-jump'>
             <Select
+              dark={this.props.dark}
               style={{ width: 90, height: 32 }}
               value={pageSize}
               onChange={
@@ -141,7 +142,7 @@ class Pagination extends React.Component {
         {
           this.props.showJumper && <div className='yui-pagination-jump'>
             <span className='yui-pagination-jump-label'>跳转至</span>
-            <Input style={{ width: 50 }} onBlur={
+            <Input dark={this.props.dark} style={{ width: 50 }} onBlur={
               (e) => {
                 let current = window.parseInt(e.target.value)
                 if (!isNaN(current)) {
