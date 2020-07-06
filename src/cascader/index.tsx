@@ -8,7 +8,8 @@ class Cascader extends React.Component {
     dark?: boolean,
     placeholder?: string,
     trigger?: string,
-    dataList: any
+    dataList: any,
+    onClick?: Function
   }
   state: any;
   cascaderNode: any;
@@ -21,29 +22,37 @@ class Cascader extends React.Component {
     }
   }
   componentDidMount() {
-    const { value } = this.props
+    const { value, dataList } = this.props
+    let cols = [JSON.parse(JSON.stringify(dataList))]
     if (Array.isArray(value)) {
       value.map((v, index) => { // 依次选中并展开
-        this.setColsByValue(this.state.cols[index], v)
+        this.setColsByValue(cols, cols[index], v)
       })
       this.setState({
         label: this.getLabel(value),
-        cols: this.state.cols
+        cols
       })
     }
   }
   componentWillReceiveProps(props) {
-    if (props.value) {
+    const { value, dataList } = props
+    let cols = [JSON.parse(JSON.stringify(dataList))]
+    if (Array.isArray(value)) {
+      value.map((v, index) => { // 依次选中并展开
+        this.setColsByValue(cols, cols[index], v)
+      })
       this.setState({
-        label: this.getLabel(props.value)
+        label: this.getLabel(value),
+        cols
       })
     }
   }
-  setColsByValue = (col, value) => {// 选中并展开
+  setColsByValue = (cols, col, value) => {// 选中并展开
     col.map(_col => {
       if (_col.value === value) {
         _col.selected = true
         _col.children && this.state.cols.push(_col.children)
+        _col.children && cols.push(_col.children)
       }
     })
   }
@@ -58,7 +67,7 @@ class Cascader extends React.Component {
       }) || {}
       return selected.label
     })
-    return labels.join('/')
+    return labels.filter(item => item !== undefined).join('/')
   }
   complete = () => {
     // 找出所有选中的value返回
@@ -78,6 +87,9 @@ class Cascader extends React.Component {
   labelClick = (cols, col, item, index) => {
     col.map(_col => { _col.selected = _col.value === item.value }) // 这个选中
     if (item.children) {
+      if (this.props.onClick) {
+        this.props.onClick(item)
+      }
       // 后面全部清空, 重制不选中
       cols.splice(index + 1, cols.length).forEach(col => col.map(_col => _col.selected = false))
       cols.push(JSON.parse(JSON.stringify(item.children))) // 添加新的
@@ -130,7 +142,7 @@ class Cascader extends React.Component {
               cols.map((col, index) => {
                 return <div className='yui-cascader-body-col'>
                   {
-                    col.map(item => {
+                    col.map((item, _index) => {
                       return <div
                         className={item.selected ? 'yui-cascader-body-col-item-active' : 'yui-cascader-body-col-item'}
                         onMouseOver={
