@@ -7,7 +7,8 @@ class Cascader extends React.Component {
     style?: any,
     dark?: boolean,
     placeholder?: string,
-    trigger?: string
+    trigger?: string,
+    dataList: any
   }
   state: any;
   cascaderNode: any;
